@@ -1,0 +1,341 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{2AEB07F8-56E0-434C-A748-C4261DBF5D2F}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WebTrashCheck</RootNamespace>
+    <AssemblyName>WebTrashCheck</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+    <IncludeIisSettings>true</IncludeIisSettings>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="itextsharp">
+      <HintPath>..\packages\iTextSharp.5.5.13\lib\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp.pdfa">
+      <HintPath>..\packages\itextsharp.pdfa.5.5.13\lib\itextsharp.pdfa.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Renci.SshNet">
+      <HintPath>..\..\..\Windows Forms App\ServiceHelper\SSH.NET-develop\SSH.NET-develop\src\Renci.SshNet\bin\Release\Renci.SshNet.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Admins\AddingTestPage.aspx" />
+    <Content Include="Images\Logo slider1.gif" />
+    <Content Include="Images\wrw.jpg" />
+    <Content Include="Others\AboutUs.aspx" />
+    <Content Include="Others\Contacts.aspx" />
+    <Content Include="Others\Info.aspx" />
+    <Content Include="Others\LoginPage.aspx" />
+    <Content Include="Others\Registration.aspx" />
+    <Content Include="Images\logo.png" />
+    <Content Include="Others\StartPage.aspx" />
+    <Content Include="Others\WebFormTest.aspx" />
+    <Content Include="Styles\SkyBlue.css" />
+    <Content Include="Styles\Gray.css" />
+    <Content Include="Users\ChangePassword.aspx" />
+    <Content Include="Users\ChooseClosedStocktakings.aspx" />
+    <Content Include="Users\ChooseStocktaking.aspx" />
+    <Content Include="Users\ChooseTest.aspx" />
+    <Content Include="Users\ClosedStocktakingDetails.aspx" />
+    <Content Include="Users\Profile.aspx" />
+    <Content Include="Users\SSH.aspx" />
+    <Content Include="Users\StartTest.aspx" />
+    <Content Include="Users\Statistics.aspx" />
+    <Content Include="Users\StocktakingCreation.aspx" />
+    <Content Include="Users\StocktakingDetails.aspx" />
+    <Content Include="Users\ViewEquipments.aspx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Admins\AddingTestPage.aspx.cs">
+      <DependentUpon>AddingTestPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admins\AddingTestPage.aspx.designer.cs">
+      <DependentUpon>AddingTestPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AnswerABC.cs" />
+    <Compile Include="DAL\BaseDAL.cs" />
+    <Compile Include="DAL\AnswerDAL.cs" />
+    <Compile Include="DAL\QuestionDAL.cs" />
+    <Compile Include="DAL\RetailClient.cs" />
+    <Compile Include="DAL\StatisticDAL.cs" />
+    <Compile Include="DAL\SubThemeDAL.cs" />
+    <Compile Include="DAL\ThemeDAL.cs" />
+    <Compile Include="LogWorker.cs" />
+    <Compile Include="MembershipABC.cs" />
+    <Compile Include="Others\AboutUs.aspx.cs">
+      <DependentUpon>AboutUs.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Others\AboutUs.aspx.designer.cs">
+      <DependentUpon>AboutUs.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Others\Contacts.aspx.cs">
+      <DependentUpon>Contacts.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Others\Contacts.aspx.designer.cs">
+      <DependentUpon>Contacts.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Others\Info.aspx.cs">
+      <DependentUpon>Info.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Others\Info.aspx.designer.cs">
+      <DependentUpon>Info.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Others\LoginPage.aspx.cs">
+      <DependentUpon>LoginPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Others\LoginPage.aspx.designer.cs">
+      <DependentUpon>LoginPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Others\Registration.aspx.cs">
+      <DependentUpon>Registration.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Others\Registration.aspx.designer.cs">
+      <DependentUpon>Registration.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MasterPages\MainPage.Master.cs">
+      <DependentUpon>MainPage.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MasterPages\MainPage.Master.designer.cs">
+      <DependentUpon>MainPage.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Others\WebFormTest.aspx.cs">
+      <DependentUpon>WebFormTest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Others\WebFormTest.aspx.designer.cs">
+      <DependentUpon>WebFormTest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Others\StartPage.aspx.cs">
+      <DependentUpon>StartPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Others\StartPage.aspx.designer.cs">
+      <DependentUpon>StartPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="QuestionABC.cs" />
+    <Compile Include="ResultABC.cs" />
+    <Compile Include="StockTakingDetails.cs" />
+    <Compile Include="SubThemeABC.cs" />
+    <Compile Include="TestABC.cs" />
+    <Compile Include="ThemeABC.cs" />
+    <Compile Include="Users\ChangePassword.aspx.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Users\ChangePassword.aspx.designer.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Users\ChooseClosedStocktakings.aspx.cs">
+      <DependentUpon>ChooseClosedStocktakings.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Users\ChooseClosedStocktakings.aspx.designer.cs">
+      <DependentUpon>ChooseClosedStocktakings.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Users\ChooseStocktaking.aspx.cs">
+      <DependentUpon>ChooseStocktaking.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Users\ChooseStocktaking.aspx.designer.cs">
+      <DependentUpon>ChooseStocktaking.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Users\ChooseTest.aspx.cs">
+      <DependentUpon>ChooseTest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Users\ChooseTest.aspx.designer.cs">
+      <DependentUpon>ChooseTest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Users\ClosedStocktakingDetails.aspx.cs">
+      <DependentUpon>ClosedStocktakingDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Users\ClosedStocktakingDetails.aspx.designer.cs">
+      <DependentUpon>ClosedStocktakingDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Users\Profile.aspx.cs">
+      <DependentUpon>Profile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Users\Profile.aspx.designer.cs">
+      <DependentUpon>Profile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Users\SSH.aspx.cs">
+      <DependentUpon>SSH.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Users\SSH.aspx.designer.cs">
+      <DependentUpon>SSH.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Users\StartTest.aspx.cs">
+      <DependentUpon>StartTest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Users\StartTest.aspx.designer.cs">
+      <DependentUpon>StartTest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Users\Statistics.aspx.cs">
+      <DependentUpon>Statistics.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Users\Statistics.aspx.designer.cs">
+      <DependentUpon>Statistics.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Users\StocktakingCreation.aspx.cs">
+      <DependentUpon>StocktakingCreation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Users\StocktakingCreation.aspx.designer.cs">
+      <DependentUpon>StocktakingCreation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Users\StocktakingDetails.aspx.cs">
+      <DependentUpon>StocktakingDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Users\StocktakingDetails.aspx.designer.cs">
+      <DependentUpon>StocktakingDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Users\ViewEquipments.aspx.cs">
+      <DependentUpon>ViewEquipments.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Users\ViewEquipments.aspx.designer.cs">
+      <DependentUpon>ViewEquipments.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewElements\TableView.cs" />
+    <Compile Include="ViewElements\WebSysDescription.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="MasterPages\MainPage.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Admins\web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Users\web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Others\web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\PublishProfiles\tresh_check.pubxml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\packages\QRCoder-master\QRCoder-master\QRCoder\QRCoder.csproj">
+      <Project>{aece5df3-c379-46ca-bb7d-7bdbe59011fd}</Project>
+      <Name>QRCoder</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>6737</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:8111</IISUrl>
+          <OverrideIISAppRootUrl>True</OverrideIISAppRootUrl>
+          <IISAppRootUrl>http://localhost:8111</IISAppRootUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

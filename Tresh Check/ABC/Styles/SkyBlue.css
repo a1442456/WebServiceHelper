@@ -1,0 +1,207 @@
+﻿body {
+font-family: "AGGaleonC";
+font-size: 18px;
+margin: 0px;
+}
+
+.tblEquipments{
+border-width: 1px;
+}
+
+.Greetings {
+    color:#151515;
+}
+
+.ImageLogoSlider {
+    margin-top:40px;
+}
+
+.lblGreetingsRus {
+font-size: 20px;
+}
+
+table caption {
+padding-bottom: 8px;
+margin-top: 8px;
+font-size: 21px;
+font-weight: 600;
+color: #232323;
+}
+
+.tblEquipments td{
+border-width: 1px;
+border-radius: 3px;
+}
+
+.tblEquipments a{
+color: #383838;
+text-decoration: none;
+}
+
+.calendar {
+color:#1b1b1b;
+width: 250px;
+}
+
+.calendar a{
+text-decoration: none;
+}
+
+.calendar td {
+border-width: 1px;
+border-style: solid;
+border-collapse: collapse;
+}
+
+#tblGreetings, #tblLogin, #tblMain{
+border-spacing: 0px;
+}
+
+#tblDiscription {
+width: 100%;
+/*padding-top:40px;*/
+border-spacing: 0px;
+text-align:left;
+color: #a08838;
+font-size: 14px;
+}
+
+/*  Define the background color for all the ODD background rows  */
+.tblEquipments tr:nth-child(odd){
+    background-color:white;
+}
+
+/*  Define the background color for all the EVEN background rows  */
+.tblEquipments tr:nth-child(even){
+    background-color:#bdebb6;
+}
+
+td {
+border-width: 0px;
+}
+
+table.main tr {
+text-align:center;
+}
+
+table.main {
+width:100%;
+border-width: 0px;
+/*color: black;*/
+margin-bottom:20px;
+}
+
+input[type=text] {
+border-radius: 3px;
+font-family: "AGGaleonC";
+font-size:18px;
+}
+
+input[type=password] {
+border-radius: 3px;
+font-family: "AGGaleonC";
+font-size:18px;
+}
+
+html {
+}
+
+input[type=submit] {
+margin-right: 2px;
+margin-top: 3px;
+margin-bottom: 5px;
+/*color: black;*/
+width: 150px;
+background-color:#87d17c;
+border-radius: 4px;
+font-family: "AGGaleonC";
+border:none;
+font-size:18px;
+box-shadow: 2px 2px 2px #888888;
+}
+
+input[type=submit].TableFilter{
+width:21px;
+height:21px;
+padding-top:1px;
+padding-left:0px;
+padding-right:0px;
+padding-bottom:0px;
+box-shadow:none;
+margin:0px;
+}
+
+input[type=text].TableFilter {
+color:#848484;
+text-align: center;
+}
+
+table.calendar td{
+text-align:center;
+}
+
+input[type=submit]:hover {
+}
+
+ul a {
+background-color:#bdebb6;
+color: black;
+text-decoration: none;
+display: block;
+width: 180px;
+height: 25px;
+line-height:23px;
+border:none;
+}
+
+ul {
+list-style: none;
+margin: 0;
+border-width: 0px;
+}
+
+ul.mbheader li {
+text-align: center;
+height: 25px;
+width: 180px;
+position: relative;
+float: left;
+/*color: black;*/
+border-spacing: 10px;
+border-radius: 4px;
+border-top-width: 0px;
+border-bottom-width: 0px;
+border-right-width: 0px;
+border-left-width: 0px;
+bottom: 0px;
+margin-right: 10px;
+/*For Shadow*/
+box-shadow: 2px 2px 2px #888888;
+}
+
+.navMenu {
+padding-top: 10px;
+padding-bottom: 10px;
+}
+
+ul.mbheader li ul {
+display: none;
+}
+
+ul.mbheader li:hover {
+}
+
+ul.mbheader li:hover .mbsub {
+display: block;
+}
+
+select {
+border-radius: 3px;
+font-family: "AGGaleonC";
+width:150px;
+font-size:18px;
+}
+
+p.Logo {
+font-family:"Old Standard TT";
+}

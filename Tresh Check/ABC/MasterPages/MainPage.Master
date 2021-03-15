@@ -1,0 +1,162 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MainPage.master.cs" Inherits="WebTrashCheck.WebTrashCheck.MainPage" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head runat="server">   
+
+     <title>Service Helper</title> 
+        <%
+            lnkStyles.Href = "..\\styles\\Gray.css";
+            foreach (string name in Request.Cookies)
+            {
+                try
+                {
+                    if (Request.Cookies.Get("ChoosedStyle").Value == "Blue")
+                        lnkStyles.Href = "..\\styles\\SkyBlue.css";
+                }
+                
+                catch(NullReferenceException)
+                {
+                }
+            }
+        %>
+    <link id="lnkStyles" rel="stylesheet" type="text/css" />
+        
+</head>
+
+<body>
+    <form id="form1" runat="server">
+    <%
+    MembershipUser currentUser = Membership.GetUser(); 
+          if (currentUser != null) 
+          { 
+              if (currentUser.IsOnline) 
+                { 
+                  tblGreetings.Visible = true; 
+                } 
+          } 
+          else 
+          { 
+              tblLogin.Visible = true; 
+          }
+          if (Roles.IsUserInRole("Admin") || Roles.IsUserInRole("User") || Roles.IsUserInRole("Shop")) 
+          { 
+              liSSH.Visible = true; 
+          }%>
+<asp:Table ID="tblMain" runat="server" CssClass="main" >
+        <asp:TableRow>
+            <asp:TableCell Width ="10%" >
+                <p class="Logo">
+                    SERVICE<br />HELPER<br />
+                </p>
+            </asp:TableCell>
+            <asp:TableCell Width ="65%" >
+                <div class="Greetings">
+                    <h2>
+                        <asp:ContentPlaceHolder ID="cphGreetings" runat="server"></asp:ContentPlaceHolder>
+                    </h2>                    
+                </div>
+            </asp:TableCell>
+            <asp:TableCell HorizontalAlign="Center" Width ="25%">
+                <asp:Table ID="tblLogin" runat="server" Visible="false">
+                    <asp:TableRow>
+                        <asp:TableCell>
+                            <asp:Label ID="lblLogin" runat="server" Text="Логин"></asp:Label>
+                        </asp:TableCell>
+                        <asp:TableCell>
+                            <asp:TextBox ID="txtbxLogin" runat="server"></asp:TextBox>
+                        </asp:TableCell>
+                    </asp:TableRow>
+                    <asp:TableRow>
+                        <asp:TableCell>
+                            <asp:Label ID="lblPassword" runat="server" Text="Пароль" ></asp:Label>
+                        </asp:TableCell>
+                        <asp:TableCell>
+                            <asp:TextBox ID="txtbxPassword" runat="server" TextMode="Password"></asp:TextBox>
+                        </asp:TableCell>
+                    </asp:TableRow>
+                    <asp:TableRow>
+                        <asp:TableCell>
+                            <asp:Button ID="btnLogin" runat="server" Text="Вход" OnClick="btnLogin_Click"/>
+                        </asp:TableCell>
+                        <asp:TableCell> 
+                            <asp:button text="Регистрация" ID="btnRegistration" runat="server" OnClick="btnRegistration_Click"/>
+                        </asp:TableCell>                           
+                    </asp:TableRow> 
+                    <asp:TableRow>
+                         <asp:TableCell>
+                            <asp:Label runat="server" ID="labelIP2INFO">Ваш IP-адрес:</asp:Label>
+                        </asp:TableCell>
+                        <asp:TableCell ColumnSpan ="2">
+                            <asp:Label runat="server" ID="lblIP2"></asp:Label>
+                        </asp:TableCell>
+                    </asp:TableRow>                   
+                </asp:Table>
+
+                <asp:Table ID="tblGreetings" runat="server" Visible="false">
+                    <asp:TableRow>
+                        <asp:TableCell>
+                            <asp:Label ID="lblGreeting" runat="server"></asp:Label>
+                        </asp:TableCell>
+                        <asp:TableCell>
+                            <asp:Label ID="lblUserName" runat="server"></asp:Label>
+                        </asp:TableCell>
+                    </asp:TableRow>
+                    <asp:TableRow>
+                        <asp:TableCell>
+                            <asp:Button ID="btnProfile" runat="server" Text="Профиль" OnClick="btnProfile_Click" Enabled="false" />
+                            <asp:Button ID="btnChangePassword" runat="server" Text="Смена пароля" OnClick="btnChangePassword_Click" Enabled="true" />
+                        </asp:TableCell>
+                        <asp:TableCell>
+                            <asp:Button ID="btnLogOut" runat="server" Text="Выход" OnClick="btnLogOut_Click" />
+                        </asp:TableCell>
+                    </asp:TableRow>
+                    <asp:TableRow>
+                         <asp:TableCell>
+                            <asp:Label runat="server" ID="lblIPInfo">Ваш IP-адрес:</asp:Label>
+                        </asp:TableCell>
+                        <asp:TableCell ColumnSpan ="2">
+                            <asp:Label runat="server" ID="lblIP"></asp:Label>
+                        </asp:TableCell>
+                    </asp:TableRow>
+                </asp:Table>
+            </asp:TableCell>
+        </asp:TableRow>
+
+        <asp:TableRow>
+            <asp:TableCell ColumnSpan="3" CssClass="navMenu">
+                <ul class="mbheader">
+                            <li><a href="../Others/StartPage.aspx">Главная</a></li>
+                            <li id="liSSH" runat="server" visible="false" style="background-color:#e20000"><a href="../Users/SSH.aspx">SSH(кассы)</a></li>                           
+                                
+                            <li>О нас
+                                <ul class="mbsub">
+                                    <li><a href="../Others/Contacts.aspx">Контакты</a></li>
+                                </ul>
+                            </li>
+                            <%--<li id="liAdmin" runat="server" visible="false"><a href="../Admins/AddingTestPage.aspx">Админка</a></li>--%>
+                        </ul>
+            </asp:TableCell>
+        </asp:TableRow>
+
+        <asp:TableRow CssClass="content" >
+            <asp:TableCell ColumnSpan="4" Height="650px" VerticalAlign="Top" HorizontalAlign="Center" BackColor="#ffffff">
+                    <asp:ContentPlaceHolder ID="cphMain" runat="server"></asp:ContentPlaceHolder>
+            </asp:TableCell>
+        </asp:TableRow>
+    </asp:Table>
+        <asp:Table ID="tblDiscription" runat="server">
+            <asp:TableRow>
+                <asp:TableCell Width="90%">
+                    
+                </asp:TableCell>
+                <asp:TableCell>
+                    <asp:Label ID="discription" runat="server">Created By<br /><u>A.Krasnikov</u><br />Not For Commercial Using</asp:Label>
+                </asp:TableCell>
+            </asp:TableRow>
+        </asp:Table>
+        </form>
+    </body>
+</html>
