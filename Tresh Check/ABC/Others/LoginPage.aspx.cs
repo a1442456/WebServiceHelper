@@ -19,12 +19,15 @@ namespace WebTrashCheck.Else
 
         protected void btnLogin_Click(object sender, EventArgs e)
         {
-            //Аутентификация и последующее перенаправление со страницы Логин
-            if(Membership.ValidateUser(txtbxLogin.Text,txtbxPassword.Text))
+            if (Membership.ValidateUser(txtbxLogin.Text, txtbxPassword.Text))
             {
                 FormsAuthentication.RedirectFromLoginPage(txtbxLogin.Text, false);
             }
-            
+        }
+
+        protected void btnRegistration_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

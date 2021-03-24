@@ -1,0 +1,159 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="BootstrapMasterPage.master.cs" Inherits="WebTrashCheck.MasterPages.BootstrapMasterPage" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Service Helper</title>
+    <%--<link href="../Styles/bootstrap/bootstrap.min.css" rel="stylesheet" />
+    <script src="../Styles/bootstrap/bootstrap.min.js"></script>
+    <script src="../Styles/bootstrap/jquery-3.2.1.slim.min.js"></script>
+    <script src="../Styles/bootstrap/popper.min.js"></script>--%>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"/>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<%--<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>--%>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <style>
+        body {
+          background-image: url("../Images/retail%202%201920%201280.jpg");
+          background-repeat: no-repeat;
+          background-color: black;
+        }
+        ul li {
+             width: 150px;
+        }
+        btn btn-dark {
+            width: 150px;
+        }
+
+        ul li:hover {
+            background-color:rgba(88, 167, 109, 0.80);
+            border-radius: 4px;
+        }
+        input[type=text] {
+            background-color: rgb(234, 233, 233);
+            border-radius: 3px;
+            font-size:14px;
+            margin-right: 2px;
+            margin-top: 3px;
+            margin-bottom: 5px;
+            }
+
+        input[type=password] {
+            background-color: rgb(234, 233, 233);
+            border-radius: 3px;
+            font-size:14px;
+            margin-right: 2px;
+            margin-top: 3px;
+            margin-bottom: 5px;
+            }
+        input[type=submit] {
+            background-color:rgba(255, 255, 255, 0.25);
+            border-top-width: 1px;
+            border-bottom-width: 1px;
+            padding-top: 7px;
+            padding-bottom: 7px;
+            margin-top: 7px;
+            }
+        .tablelike{
+            border-width:1px;
+            border-style: double;
+            border-color: white;
+        }
+        .bottomborder{
+            border-bottom-width:1px;
+            border-bottom-style: double;
+            border-color: white;
+        }
+         input[type=submit]:hover {
+             background-color:rgba(88, 167, 109, 0.80);
+            }
+    </style>
+</head>
+<body>
+    <%
+    MembershipUser currentUser = Membership.GetUser(); 
+          if (currentUser != null) 
+          { 
+              if (currentUser.IsOnline) 
+                { 
+                  btnLogin.Visible = false;
+                  btnLogOut.Visible = true;
+                } 
+          } 
+          else 
+          {
+              btnLogOut.Visible = false; 
+              btnLogin.Visible = true; 
+          }%>
+    <form id="form1" runat="server">
+        <div class="row bottomborder" style="background:rgba(0, 0, 0, 1)">
+            <div class="col-3" >
+                
+            </div>
+             <div class="col-6 text-light text-center" ">
+                  <h1 ><asp:ContentPlaceHolder ID="cphNotation" runat="server"></asp:ContentPlaceHolder></h1>
+            </div>
+            <div class="col-3 text-light text-right" >
+                <div class="row">
+                    <div class="col-9">
+                        <div class="row">
+                            <div class="col">
+                                <asp:Label Visible="false" runat="server" ID="lblUserName" ></asp:Label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <asp:Label Visible="false" runat="server" ID="lblIP"></asp:Label>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <div class="row-3" style="margin-right:1px">
+                        <asp:Button ID="btnLogin" runat="server" OnClick="btnLogin_Click" class="btn text-light" Text="Авторизация"/>
+                        <asp:Button ID="btnLogOut" runat="server" OnClick="btnLogOut_Click" class="btn text-light" Text="Выход"/>
+                    </div>
+                </div>
+            </div>
+            </div>
+        <div class="row text-light">
+            <div class="col-3 text-light text-center" >
+                
+            </div>
+            <div runat="server" id="theNav" class="col-6">
+                <div class="row text-center" >
+                        <div class="col-12" style="background:rgba(0, 0, 0, 0.8); border-radius:5px">
+                            <ul class="nav ">
+                            <li class="nav">
+                                <a class="text-light nav-link" href="../Others/StartPage.aspx">Главная</a>
+                            </li>
+                            <li class="nav">
+                                <a class="text-light nav-link"  href="../Users/SSH.aspx">SSH(кассы)</a>
+                            </li>
+                            <li class="nav">
+                                <a class="text-light nav-link"  href="../Others/StartPage.aspx">О нас</a>
+                            </li>
+                        </ul>
+                        </div>
+                            
+                    </div>
+                </div>
+            <div class="col-3 text-light text-center" >
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-3"></div>
+            <div class="text-center text-light col-6" style="border-radius:5px; background:rgba(0, 0, 0, 0.8); text-align:center; margin-top:100px;" >
+                <asp:ContentPlaceHolder ID="cphMain" runat="server"></asp:ContentPlaceHolder>
+            </div>
+            <div class="col-3"></div>
+        </div>
+        <nav class="navbar fixed-bottom" style="background:rgba(255, 0, 0, 1);" runat="server" visible="true" id="licenceBar">
+            <div class="col-12 text-center">
+                <span>Создал <u><b>Красников Антон</b></u><br />Не для коммерческого использования</span>
+            </div>
+        </nav>
+        
+    </form>
+</body>
+</html>

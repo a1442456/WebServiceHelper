@@ -1,12 +1,10 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPages/MainPage.Master" AutoEventWireup="true" CodeBehind="SSH.aspx.cs" Inherits="WebTrashCheck.Users.SSH" %>
-<asp:Content ID="Content1" ContentPlaceHolderID="cphGreetings" runat="server">
-    <asp:Label ID="lblGreetings" runat="server">SSH Commander</asp:Label>
-    <br />
-    <asp:Label ID="lblGreetingsRus" runat="server" CssClass="lblGreetingsRus">Работа с кассами по SSH</asp:Label>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPages/BootstrapMasterPage.Master" AutoEventWireup="true" CodeBehind="SSH.aspx.cs" Inherits="WebTrashCheck.Users.SSH" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="cphNotation" runat="server">
+    <p>SSH(кассы)</p>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="cphMain" runat="server">
 
-    <asp:Table runat="server">
+    <asp:Table runat="server" Visible="false">
         <asp:TableRow>
             <asp:TableCell VerticalAlign="Top" BackColor="White">
                 <asp:Table ID="Table1" runat="server" BorderStyle="Solid" BorderWidth="2">
@@ -25,7 +23,7 @@
         <asp:TableRow>
             
             <asp:TableCell ColumnSpan="2" >
-                <asp:Label runat="server" ID="lblCashIP" >IP кассы: </asp:Label><asp:TextBox runat="server" ID="txtbxCashIP" Enabled="false"></asp:TextBox>
+                <asp:Label runat="server" ID="lblCashIP" >IP кассы: </asp:Label>
             </asp:TableCell>
         </asp:TableRow>
                     <asp:TableRow>
@@ -65,9 +63,29 @@
             </asp:TableCell>
         </asp:TableRow>
     </asp:Table>
-
-
-    
-    <br />
-    
+    <%--<h1>Start of a new blocks</h1>--%>
+    <div class="row">
+        <div class="col-6 tablelike" >
+            <h1>Console</h1>
+        </div>
+        <div class="col-6 tablelike" >
+            <div class="row bottomborder">
+                <div class="col">
+                    IP кассы<asp:TextBox runat="server" ID="txtbxCashIP" Enabled="false"></asp:TextBox>
+                </div>
+            </div>
+            <div class="row bottomborder">
+                <div class="col">
+                    <asp:Label runat="server" ID="Label1">Комманда: </asp:Label> <asp:TextBox runat="server" ID="TextBox1" Enabled="false"></asp:TextBox>
+                </div>
+            </div>
+            <h1>Control panel</h1>
+            <h1>Control panel</h1>
+            <h1>Control panel</h1>
+            <h1>Control panel</h1>
+            <h1>Control panel</h1>
+            <h1>Control panel</h1>
+            <h1>Control panel</h1>
+        </div>
+    </div>
 </asp:Content>

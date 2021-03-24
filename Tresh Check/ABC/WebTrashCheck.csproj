@@ -55,7 +55,8 @@
       <HintPath>..\packages\itextsharp.pdfa.5.5.13\lib\itextsharp.pdfa.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="Renci.SshNet">
+    <Reference Include="Renci.SshNet, Version=2017.0.0.0, Culture=neutral, PublicKeyToken=1cee9f8bde3db106, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\Windows Forms App\ServiceHelper\SSH.NET-develop\SSH.NET-develop\src\Renci.SshNet\bin\Release\Renci.SshNet.dll</HintPath>
     </Reference>
     <Reference Include="System.Data.DataSetExtensions" />
@@ -75,7 +76,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Admins\AddingTestPage.aspx" />
+    <Content Include="Admins\TestPage.aspx" />
+    <Content Include="Admins\TestPageWithMaster.aspx" />
     <Content Include="Images\Logo slider1.gif" />
+    <Content Include="Images\retail 1.jpg" />
+    <Content Include="Images\retail 2 1920 1280.jpg" />
+    <Content Include="Images\retail 2.jpg" />
     <Content Include="Images\wrw.jpg" />
     <Content Include="Others\AboutUs.aspx" />
     <Content Include="Others\Contacts.aspx" />
@@ -85,6 +91,10 @@
     <Content Include="Images\logo.png" />
     <Content Include="Others\StartPage.aspx" />
     <Content Include="Others\WebFormTest.aspx" />
+    <Content Include="Styles\bootstrap\bootstrap.min.css" />
+    <Content Include="Styles\bootstrap\bootstrap.min.js" />
+    <Content Include="Styles\bootstrap\jquery-3.2.1.slim.min.js" />
+    <Content Include="Styles\bootstrap\popper.min.js" />
     <Content Include="Styles\SkyBlue.css" />
     <Content Include="Styles\Gray.css" />
     <Content Include="Users\ChangePassword.aspx" />
@@ -118,6 +128,20 @@
     <Compile Include="Admins\AddingTestPage.aspx.designer.cs">
       <DependentUpon>AddingTestPage.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Admins\TestPage.aspx.cs">
+      <DependentUpon>TestPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admins\TestPage.aspx.designer.cs">
+      <DependentUpon>TestPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admins\TestPageWithMaster.aspx.cs">
+      <DependentUpon>TestPageWithMaster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admins\TestPageWithMaster.aspx.designer.cs">
+      <DependentUpon>TestPageWithMaster.aspx</DependentUpon>
+    </Compile>
     <Compile Include="AnswerABC.cs" />
     <Compile Include="DAL\BaseDAL.cs" />
     <Compile Include="DAL\AnswerDAL.cs" />
@@ -127,6 +151,13 @@
     <Compile Include="DAL\SubThemeDAL.cs" />
     <Compile Include="DAL\ThemeDAL.cs" />
     <Compile Include="LogWorker.cs" />
+    <Compile Include="MasterPages\BootstrapMasterPage.Master.cs">
+      <DependentUpon>BootstrapMasterPage.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MasterPages\BootstrapMasterPage.Master.designer.cs">
+      <DependentUpon>BootstrapMasterPage.Master</DependentUpon>
+    </Compile>
     <Compile Include="MembershipABC.cs" />
     <Compile Include="Others\AboutUs.aspx.cs">
       <DependentUpon>AboutUs.aspx</DependentUpon>
@@ -293,6 +324,7 @@
     <Content Include="Others\web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="MasterPages\BootstrapMasterPage.Master" />
     <None Include="Properties\PublishProfiles\tresh_check.pubxml" />
   </ItemGroup>
   <ItemGroup>
@@ -301,6 +333,7 @@
       <Name>QRCoder</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

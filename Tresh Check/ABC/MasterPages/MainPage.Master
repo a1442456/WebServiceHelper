@@ -23,6 +23,7 @@
             }
         %>
     <link id="lnkStyles" rel="stylesheet" type="text/css" />
+
         
 </head>
 
@@ -43,7 +44,12 @@
           }
           if (Roles.IsUserInRole("Admin") || Roles.IsUserInRole("User") || Roles.IsUserInRole("Shop")) 
           { 
-              liSSH.Visible = true; 
+              liSSH.Visible = true;
+          }
+          if (Roles.IsUserInRole("Admin"))
+          {
+              liTestPageWithMaster.Visible = true;
+              liTestPage.Visible = true;
           }%>
 <asp:Table ID="tblMain" runat="server" CssClass="main" >
         <asp:TableRow>
@@ -129,8 +135,9 @@
             <asp:TableCell ColumnSpan="3" CssClass="navMenu">
                 <ul class="mbheader">
                             <li><a href="../Others/StartPage.aspx">Главная</a></li>
-                            <li id="liSSH" runat="server" visible="false" style="background-color:#e20000"><a href="../Users/SSH.aspx">SSH(кассы)</a></li>                           
-                                
+                            <li id="liSSH" runat="server" visible="false" style="background-color:#e20000"><a href="../Users/SSH.aspx">SSH(кассы)</a></li>                                            <li id="liTestPage" runat="server" visible="false"><a href="../Admins/TestPage.aspx">Test Page</a></li>
+                            <li id="liTestPageWithMaster" runat="server" visible="false"><a href="../Admins/TestPageWithMaster.aspx">Test page + master</a></li>
+                    
                             <li>О нас
                                 <ul class="mbsub">
                                     <li><a href="../Others/Contacts.aspx">Контакты</a></li>

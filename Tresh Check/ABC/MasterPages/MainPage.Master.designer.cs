@@ -211,6 +211,24 @@ namespace WebTrashCheck.WebTrashCheck {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl liSSH;
         
         /// <summary>
+        /// liTestPage control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl liTestPage;
+        
+        /// <summary>
+        /// liTestPageWithMaster control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl liTestPageWithMaster;
+        
+        /// <summary>
         /// cphMain control.
         /// </summary>
         /// <remarks>

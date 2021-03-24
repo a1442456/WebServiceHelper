@@ -13,15 +13,6 @@ namespace WebTrashCheck.Else {
     public partial class Login {
         
         /// <summary>
-        /// tblLogin control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Table tblLogin;
-        
-        /// <summary>
         /// lblLogin control.
         /// </summary>
         /// <remarks>
@@ -65,23 +56,5 @@ namespace WebTrashCheck.Else {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnLogin;
-        
-        /// <summary>
-        /// lblGreetings control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblGreetings;
-        
-        /// <summary>
-        /// lblGreetingsRus control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblGreetingsRus;
     }
 }

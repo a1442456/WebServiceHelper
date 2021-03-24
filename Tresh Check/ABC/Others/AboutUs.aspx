@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPages/MainPage.Master" AutoEventWireup="true" CodeBehind="AboutUs.aspx.cs" Inherits="WebTrashCheck.Else.AboutUs" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPages/BootstrapMasterPage.Master" AutoEventWireup="true" CodeBehind="AboutUs.aspx.cs" Inherits="WebTrashCheck.Else.AboutUs" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="cphMain" runat="server">
     here should be info about us
 </asp:Content>

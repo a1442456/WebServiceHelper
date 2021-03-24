@@ -1,13 +1,34 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPages/MainPage.Master" AutoEventWireup="true" CodeBehind="StartPage.aspx.cs" Inherits="WebTrashCheck.test" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPages/BootstrapMasterPage.Master" AutoEventWireup="true" CodeBehind="StartPage.aspx.cs" Inherits="WebTrashCheck.test" %>
 
+<asp:Content ID="Content1" ContentPlaceHolderID="cphNotation" runat="server">
+    <p>Service Helper BMK</p>
+</asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="cphMain" runat="server">
-    <%--<h1>Герои касс</h1>
-    (Будет дополненно)<br />
-    <asp:Image runat="server" ID="imgLogoSlider" ImageUrl="../Images/Logo%20slider1.gif" CssClass="ImageLogoSlider" BorderStyle="Solid"/>--%>
-</asp:Content>
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+  <ol class="carousel-indicators">
+    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+  </ol>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <h1>Что такое Service Helper?</h1>
+      <h2><br/>Для чего нужен Service Helper?<br/><br/></h2>
+    </div>
+    <div class="carousel-item">
+      <h1>Я ХЗ</h1>
+      <h2><br/>Для чего нужен Service Helper<br/><br/></h2>
+    </div>
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+   </asp:Content>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="cphGreetings" runat="server">
-    <asp:Label ID="lblGreetings" runat="server">You Are Welcome To Service-Helper's Page</asp:Label>
-    <br />
-    <asp:Label ID="lblGreetingsRus" runat="server" CssClass="lblGreetingsRus">Добро пожаловать на web-страницу Сервис Хелпера</asp:Label>
-</asp:Content>
+
+
