@@ -14,22 +14,28 @@
 <%--<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>--%>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <style>
+        .x  {
+          background: #ff3232;
+          /*background: -moz-linear-gradient(-45deg, #ff3232 0%, #ff3030 50%, #282fff 51%, #005dff 100%);
+          background: -webkit-linear-gradient(-45deg, #ff3232 0%,#ff3030 50%,#282fff 51%,#005dff 100%);*/
+          background: linear-gradient(0deg, #ff3232 10%,#ff3030 50%, #282fff 50%);
+          /*filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff3232', endColorstr='#005dff',GradientType=1 );*/
+        }
         body {
           background-image: url("../Images/retail%202%201920%201280.jpg");
           background-repeat: no-repeat;
           background-color: black;
         }
+
         ul li {
              width: 150px;
         }
-        btn btn-dark {
-            width: 150px;
+
+        ul li a:hover{
+            /*background: linear-gradient(0.50turn, #ffffff 5%, #f30000 50%, #ffffff 95%);*/
+            background-color:rgb(0, 108, 55);
         }
 
-        ul li:hover {
-            background-color:rgba(88, 167, 109, 0.80);
-            border-radius: 4px;
-        }
         input[type=text] {
             background-color: rgb(234, 233, 233);
             border-radius: 3px;
@@ -37,7 +43,7 @@
             margin-right: 2px;
             margin-top: 3px;
             margin-bottom: 5px;
-            }
+        }
 
         input[type=password] {
             background-color: rgb(234, 233, 233);
@@ -46,15 +52,21 @@
             margin-right: 2px;
             margin-top: 3px;
             margin-bottom: 5px;
-            }
+        }
+
         input[type=submit] {
-            background-color:rgba(255, 255, 255, 0.25);
+            padding-left:10px;
+            padding-right:10px;
+            background-color:rgb(105, 105, 105);
             border-top-width: 1px;
             border-bottom-width: 1px;
-            padding-top: 7px;
-            padding-bottom: 7px;
             margin-top: 7px;
-            }
+            margin-bottom: 8px;
+        }
+        .btn {
+            padding:0px;
+        }
+
         .tablelike{
             border-width:1px;
             border-style: double;
@@ -65,9 +77,22 @@
             border-bottom-style: double;
             border-color: white;
         }
+
+        .rightborder{
+            border-right-width:1px;
+            border-right-style: double;
+            border-color: #ffffff;
+        }
+
          input[type=submit]:hover {
-             background-color:rgba(88, 167, 109, 0.80);
-            }
+             background-color:rgb(0, 108, 55);
+             /*background: linear-gradient(0.50turn, #ffffff 5%, #f30000 50%, #ffffff 95%);*/
+        }
+
+         select {
+            border-radius: 3px;
+            font-size:18px;
+        }
     </style>
 </head>
 <body>
@@ -87,17 +112,17 @@
               btnLogin.Visible = true; 
           }%>
     <form id="form1" runat="server">
-        <div class="row bottomborder" style="background:rgba(0, 0, 0, 1)">
-            <div class="col-3" >
+        <div class="row bottomborder" style="background: black;">
+            <div class="col-3 text-center text-light" >
                 
             </div>
-             <div class="col-6 text-light text-center" ">
-                  <h1 ><asp:ContentPlaceHolder ID="cphNotation" runat="server"></asp:ContentPlaceHolder></h1>
+             <div class="col-6 text-light text-center" style="font-size:25px">
+                  <asp:ContentPlaceHolder ID="cphNotation" runat="server"></asp:ContentPlaceHolder>
             </div>
             <div class="col-3 text-light text-right" >
-                <div class="row">
-                    <div class="col-9">
-                        <div class="row">
+                <div class="row ">
+                    <div class="col-9 ">
+                        <div class="row ">
                             <div class="col">
                                 <asp:Label Visible="false" runat="server" ID="lblUserName" ></asp:Label>
                             </div>
@@ -143,14 +168,14 @@
         </div>
         <div class="row">
             <div class="col-3"></div>
-            <div class="text-center text-light col-6" style="border-radius:5px; background:rgba(0, 0, 0, 0.8); text-align:center; margin-top:100px;" >
+            <div class="text-center text-light col-6" style="border-radius:5px; background:rgba(0, 0, 0, 0.8); text-align:center; margin-top:100px; margin-bottom:100px" >
                 <asp:ContentPlaceHolder ID="cphMain" runat="server"></asp:ContentPlaceHolder>
             </div>
             <div class="col-3"></div>
         </div>
-        <nav class="navbar fixed-bottom" style="background:rgba(255, 0, 0, 1);" runat="server" visible="true" id="licenceBar">
+        <nav class="navbar fixed-bottom" style="background:rgba(68, 0, 0, 0.88);" runat="server" visible="true" id="licenceBar">
             <div class="col-12 text-center">
-                <span>Создал <u><b>Красников Антон</b></u><br />Не для коммерческого использования</span>
+                <span style="color:rgb(255, 78, 0)">Создал <u><b>Красников Антон</b></u><br />Не для коммерческого использования</span>
             </div>
         </nav>
         

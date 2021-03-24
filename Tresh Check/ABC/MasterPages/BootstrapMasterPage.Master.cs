@@ -43,7 +43,7 @@ namespace WebTrashCheck.MasterPages
 
         protected void btnLogin_Click(object sender, EventArgs e)
         {
-            Response.Redirect("../Users/StartPage.aspx");
+            Response.Redirect("../Others/LoginPage.aspx");
         }
 
         protected void btnLogOut_Click(object sender, EventArgs e)

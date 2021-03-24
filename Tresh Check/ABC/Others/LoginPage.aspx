@@ -4,22 +4,23 @@
 </asp:Content>
 <asp:Content ID="Content1" ContentPlaceHolderID="cphMain" runat="server">
     <%--login table--%>
-        <div class="row text-center">
-            <div class="col-12 text-light text-center" >
-                    <div class="row" >
-                        <div class="col-6 text-right">
+        <div class="row text-center ">
+            <div class="col-4"></div>
+            <div class="col-4 text-light text-center " >
+                    <div class="row " >
+                        <div class="col-4 text-center">
                             <asp:Label runat="server" ID="lblLogin">Логин</asp:Label>
                         </div>
-                        <div class="col-6 text-left">
+                        <div class="col-8 text-center">
                             <asp:TextBox ID="txtbxLogin" runat="server"></asp:TextBox>
                         </div>
                     
                     </div>
                     <div class="row" >
-                        <div class="col-6 text-right">
+                        <div class="col-4 text-center">
                             <asp:Label runat="server" ID="lblPassword">Пароль</asp:Label>
                         </div>
-                        <div class="col-6 text-left">  
+                        <div class="col-8 text-center">  
                            <asp:TextBox  ID="txtbxPassword" runat="server" TextMode="Password"></asp:TextBox>
                         </div>
                     
@@ -30,7 +31,7 @@
                         </div>
                     </div>
                 </div>
-            
+                <div class="col-3"></div>
              </div>
     <%--login table ends--%>
 </asp:Content>
