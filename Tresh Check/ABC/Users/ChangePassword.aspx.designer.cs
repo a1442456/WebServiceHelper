@@ -13,24 +13,6 @@ namespace WebTrashCheck.Users {
     public partial class ChangePassword {
         
         /// <summary>
-        /// lblGreetings control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblGreetings;
-        
-        /// <summary>
-        /// lblGreetingsRus control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblGreetingsRus;
-        
-        /// <summary>
         /// lblInfo control.
         /// </summary>
         /// <remarks>
