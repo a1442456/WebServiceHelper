@@ -102,14 +102,14 @@
           { 
               if (currentUser.IsOnline) 
                 { 
-                  btnLogin.Visible = false;
-                  btnLogOut.Visible = true;
+                  divAuthorized.Visible = true;
+                  divUnAuthorized.Visible = false;
                 } 
           } 
           else 
           {
-              btnLogOut.Visible = false; 
-              btnLogin.Visible = true; 
+              divAuthorized.Visible = false;
+              divUnAuthorized.Visible = true;
           }%>
     <form id="form1" runat="server">
         <div class="row bottomborder" style="background: black;">
@@ -117,26 +117,18 @@
                 
             </div>
              <div class="col-6 text-light text-center" style="font-size:25px">
-                  <asp:ContentPlaceHolder ID="cphNotation" runat="server"></asp:ContentPlaceHolder>
+                  <h1><asp:ContentPlaceHolder ID="cphNotation" runat="server"></asp:ContentPlaceHolder></h1>
             </div>
             <div class="col-3 text-light text-right" >
-                <div class="row ">
-                    <div class="col-9 ">
-                        <div class="row ">
-                            <div class="col">
-                                <asp:Label Visible="false" runat="server" ID="lblUserName" ></asp:Label>
-                            </div>
+                <div class="row" style="margin-top:10px">
+                    <div runat="server" id="divAuthorized" class="col" style="margin-right:1px">
+                        <div class="col">
+                            <asp:Label Visible="false" runat="server" ID="lblUserName" ></asp:Label>
+                            <asp:Button ID="btnLogOut" runat="server" OnClick="btnLogOut_Click" class="btn text-light" Text="Выход"/>
                         </div>
-                        <div class="row">
-                            <div class="col">
-                                <asp:Label Visible="false" runat="server" ID="lblIP"></asp:Label>
-                            </div>
-                        </div>
-                        
                     </div>
-                    <div class="row-3" style="margin-right:1px">
+                    <div runat="server" id="divUnAuthorized" class="col" style="margin-right:1px">
                         <asp:Button ID="btnLogin" runat="server" OnClick="btnLogin_Click" class="btn text-light" Text="Авторизация"/>
-                        <asp:Button ID="btnLogOut" runat="server" OnClick="btnLogOut_Click" class="btn text-light" Text="Выход"/>
                     </div>
                 </div>
             </div>
@@ -159,6 +151,7 @@
                                 <a class="text-light nav-link"  href="../Others/StartPage.aspx">О нас</a>
                             </li>
                         </ul>
+                             
                         </div>
                             
                     </div>
@@ -168,7 +161,7 @@
         </div>
         <div class="row">
             <div class="col-3"></div>
-            <div class="text-center text-light col-6" style="border-radius:5px; background:rgba(0, 0, 0, 0.8); text-align:center; margin-top:100px; margin-bottom:100px" >
+            <div class="text-light col-6" style=" border-radius:5px; background:rgba(0, 0, 0, 0.8); text-align:center; margin-top:100px; margin-bottom:100px; display: inline-block;" >
                 <asp:ContentPlaceHolder ID="cphMain" runat="server"></asp:ContentPlaceHolder>
             </div>
             <div class="col-3"></div>
@@ -176,6 +169,8 @@
         <nav class="navbar fixed-bottom" style="background:rgba(68, 0, 0, 0.88);" runat="server" visible="true" id="licenceBar">
             <div class="col-12 text-center">
                 <span style="color:rgb(255, 78, 0)">Создал <u><b>Красников Антон</b></u><br />Не для коммерческого использования</span>
+                <br />
+                <asp:Label style="color:rgb(255, 78, 0)" runat="server" ID="lblIP"></asp:Label>
             </div>
         </nav>
         

@@ -4,7 +4,7 @@
     <p>Service Helper BMK</p>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="cphMain" runat="server">
-    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" style="height:220px">
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" style="height:250px">
   <ol class="carousel-indicators">
     <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
     <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
@@ -16,7 +16,8 @@
   <div class="carousel-inner">
     <div class="carousel-item active">
       <h1>Что такое Service Helper?</h1>
-      <h2>Для чего нужен Service Helper?</h2>
+      <h2>И для чего он нужен?</h2>
+        <br />
         <br />
         <br />
         <br />
@@ -30,6 +31,7 @@
                 <h5>Скачивание логов</h5>
                 <br />
                 <br />
+                <br />
             </div>
         </div>
     </div>
@@ -39,6 +41,7 @@
             <div class="col-12 text-center">
                 <h5>Генерация</h5>
                 <h5>Отправка</h5>
+                <br />
                 <br />
                 <br />
                 <br />
@@ -54,6 +57,7 @@
                 <br />
                 <br />
                 <br />
+                <br />
             </div>
         </div>
     </div>
@@ -62,12 +66,14 @@
         <h5>.NET Framework Win Forms</h5>
         <h1>Web версия</h1>
         <h5>ASP.NET Framework Web Forms</h5>
+        <br />
     </div>
     <div class="carousel-item">
         <h1>Использованные технологии</h1>
         <h5>.NET Framework C#</h5>
         <h5>MS SQL server T-Sql</h5>
         <h5>HTML/Div-верстка/Bootstrap 5.0/CSS</h5>
+        <br />
         <br />
     </div>
   </div>

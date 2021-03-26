@@ -16,7 +16,6 @@ namespace WebTrashCheck.MasterPages
 
             if (currentUser != null)
             {
-                lblIP.Visible = true;
                 lblUserName.Visible = true;
                 lblUserName.Text = "Вы авторизованы как: " + currentUser.UserName;
             }
@@ -52,6 +51,11 @@ namespace WebTrashCheck.MasterPages
             Session.Abandon();
             FormsAuthentication.SignOut();
             FormsAuthentication.RedirectToLoginPage();
+        }
+
+        protected void btnChangePassword_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("../Users/ChangePassword.aspx");
         }
     }
 }
